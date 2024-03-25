@@ -1,11 +1,17 @@
 import { useState } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData} from "react-router-dom";
+import { MdBookmarkAdd } from "react-icons/md"
+
 
 
 const Blog = () => {
     const blog = useLoaderData();
+	
+
     const[tab, setTab]= useState(0)
-    const {comments_count, public_reactions_count,reading_time_minutes, title,published_at, tags}=blog
+    const {comments_count, public_reactions_count,reading_time_minutes, title,published_at, }=blog
+
+	
 
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -39,6 +45,8 @@ const Blog = () => {
 		</svg>
 		<span>Author</span>
 	</Link>
+
+	<button className="text-pink-500 btn text-2xl rounded-full"><MdBookmarkAdd /></button>
 	
 </div>
 		</div>
